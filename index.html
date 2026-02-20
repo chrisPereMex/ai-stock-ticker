@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI & Stock News Ticker</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f5f5;
+        }
+        
+        /* Spiegel-inspired header */
+        header {
+            background: #e60015;
+            color: white;
+            padding: 15px 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        header h1 {
+            font-size: 28px;
+            font-weight: 700;
+            font-family: Georgia, serif;
+        }
+        
+        header .date {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+        
+        /* Ticker section */
+        .ticker-section {
+            margin: 20px;
+        }
+        
+        .section-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: #1a1a1a;
+            border-left: 5px solid #e60015;
+            padding-left: 15px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        /* News grid */
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .news-card {
+            background: white;
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+        }
+        
+        .news-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+        }
+        
+        .news-card img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 40px;
+        }
+        
+        .news-card .content {
+            padding: 15px;
+        }
+        
+        .news-card h3 {
+            font-size: 16px;
+            font-weight: 600;
+            color: #1a1a1a;
+            line-height: 1.4;
+            margin-bottom: 8px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        
+        .news-card .meta {
+            font-size: 12px;
+            color: #666;
+        }
+        
+        .news-card .source {
+            color: #e60015;
+            font-weight: 600;
+        }
+        
+        /* Stock section */
+        .stock-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .stock-card {
+            background: white;
+            padding: 20px;
+            border-radius: 4px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .stock-card .symbol {
+            font-size: 18px;
+            font-weight: 700;
+            color: #1a1a1a;
+        }
+        
+        .stock-card .price {
+            font-size: 24px;
+            font-weight: 600;
+            margin: 5px 0;
+        }
+        
+        .stock-card .change {
+            font-size: 14px;
+            font-weight: 600;
+        }
+        
+        .stock-card .change.positive {
+            color: #008000;
+        }
+        
+        .stock-card .change.negative {
+            color: #e60015;
+        }
+        
+        /* Footer */
+        footer {
+            background: #1a1a1a;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            font-size: 12px;
+        }
+        
+        footer a {
+            color: #e60015;
+            text-decoration: none;
+        }
+        
+        /* Responsive */
+        @media (max-width: 600px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+                gap: 10px;
+            }
+            
+            .news-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>📰 AI & Stock News Ticker</h1>
+        <div class="date">Freitag, 20. Februar 2026</div>
+    </header>
+    
+    <main>
+        <!-- AI News Section -->
+        <section class="ticker-section">
+            <h2 class="section-title">🤖 Künstliche Intelligenz</h2>
+            <div class="news-grid">
+                <a href="https://taalas.com/the-path-to-ubiquitous-ai/" target="_blank" class="news-card">
+                    <div class="img-placeholder">🤖</div>
+                    <div class="content">
+                        <h3>The path to ubiquitous AI (17k tokens/sec)</h3>
+                        <div class="meta">
+                            <span class="source">Taalas</span> • 3 Stunden ago
+                        </div>
+                    </div>
+                </a>
+                <a href="https://www.ft.com/content/dea24046-0a73-40b2-8246-5ac7b7a54323" target="_blank" class="news-card">
+                    <div class="img-placeholder">💰</div>
+                    <div class="content">
+                        <h3>Nvidia and OpenAI abandon unfinished $100B deal in favour of $30B investment</h3>
+                        <div class="meta">
+                            <span class="source">Financial Times</span> • 2 Stunden ago
+                        </div>
+                    </div>
+                </a>
+                <a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-1-pro/" target="_blank" class="news-card">
+                    <div class="img-placeholder">🧠</div>
+                    <div class="content">
+                        <h3>Gemini 3.1 Pro - Google's Latest AI Model</h3>
+                        <div class="meta">
+                            <span class="source">Google</span> • 22 Stunden ago
+                        </div>
+                    </div>
+                </a>
+                <a href="https://www.together.ai/blog/consistency-diffusion-language-models" target="_blank" class="news-card">
+                    <div class="img-placeholder">⚡</div>
+                    <div class="content">
+                        <h3>Consistency diffusion language models: Up to 14x faster, no quality loss</h3>
+                        <div class="meta">
+                            <span class="source">Together AI</span> • 9 Stunden ago
+                        </div>
+                    </div>
+                </a>
+                <a href="https://www.kasava.dev/blog/ai-as-exoskeleton" target="_blank" class="news-card">
+                    <div class="img-placeholder">🦾</div>
+                    <div class="content">
+                        <h3>AI is not a coworker, it's an exoskeleton</h3>
+                        <div class="meta">
+                            <span class="source">Kasava</span> • 18 Stunden ago
+                        </div>
+                    </div>
+                </a>
+                <a href="https://stripe.dev/blog/minions-stripes-one-shot-end-to-end-coding-agents-part-2" target="_blank" class="news-card">
+                    <div class="img-placeholder">💳</div>
+                    <div class="content">
+                        <h3>Minions – Stripe's Coding Agents Part 2</h3>
+                        <div class="meta">
+                            <span class="source">Stripe</span> • 2 Stunden ago
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </section>
+        
+        <!-- Stock Market Section -->
+        <section class="ticker-section">
+            <h2 class="section-title">📈 Aktienmarkt</h2>
+            <div class="stock-grid">
+                <div class="stock-card">
+                    <div class="symbol">NVDA</div>
+                    <div class="price">$132.50</div>
+                    <div class="change positive">+2.34%</div>
+                </div>
+                <div class="stock-card">
+                    <div class="symbol">AAPL</div>
+                    <div class="price">$228.90</div>
+                    <div class="change positive">+0.87%</div>
+                </div>
+                <div class="stock-card">
+                    <div class="symbol">MSFT</div>
+                    <div class="price">$415.20</div>
+                    <div class="change negative">-0.45%</div>
+                </div>
+                <div class="stock-card">
+                    <div class="symbol">GOOGL</div>
+                    <div class="price">$178.30</div>
+                    <div class="change positive">+1.12%</div>
+                </div>
+                <div class="stock-card">
+                    <div class="symbol">TSLA</div>
+                    <div class="price">$248.75</div>
+                    <div class="change negative">-1.89%</div>
+                </div>
+                <div class="stock-card">
+                    <div class="symbol">AMZN</div>
+                    <div class="price">$198.40</div>
+                    <div class="change positive">+0.62%</div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- X/Twitter Section -->
+        <section class="ticker-section">
+            <h2 class="section-title">🐦 Von @pere_very_wild</h2>
+            <div class="news-grid" id="twitter-feed">
+                <div class="news-card">
+                    <div class="img-placeholder">🐦</div>
+                    <div class="content">
+                        <h3>Loading tweets...</h3>
+                        <div class="meta">
+                            <span class="source">Twitter</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <p>Täglich aktualisiert um 7:00 Uhr | <a href="https://chrisPereMex.github.io/ai-stock-ticker">GitHub Pages</a></p>
+    </footer>
+    
+    <style>
+        .img-placeholder {
+            width: 100%;
+            height: 160px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 50px;
+        }
+        
+        .news-card {
+            text-decoration: none;
+        }
+    </style>
+</body>
+</html>
