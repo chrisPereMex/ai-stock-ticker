@@ -138,7 +138,6 @@
             border-radius: 8px;
             overflow: hidden;
             height: 450px;
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
             display: flex;
             align-items: flex-end;
         }
@@ -148,7 +147,6 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            opacity: 0.7;
         }
         
         .hero-content {
@@ -172,6 +170,11 @@
             border-radius: 3px;
             margin-bottom: 15px;
         }
+        
+        .hero-tag.spiegel { background: #c00000; }
+        .hero-tag.heise { background: #0066cc; }
+        .hero-tag.nyt { background: #000000; }
+        .hero-tag.wsj { background: #0080C0; }
         
         .hero-title {
             font-family: 'Playfair Display', Georgia, serif;
@@ -223,9 +226,12 @@
         
         .hero-sidebar-item .source {
             font-size: 12px;
-            color: var(--spiegel-red);
             font-weight: 500;
         }
+        
+        .hero-sidebar-item .source.spiegel { color: #c00000; }
+        .hero-sidebar-item .source.heise { color: #0066cc; }
+        .hero-sidebar-item .source.nyt { color: #000000; }
         
         /* Section Titles */
         .section {
@@ -278,7 +284,7 @@
             position: relative;
             height: 180px;
             overflow: hidden;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: #f0f0f0;
         }
         
         .news-card-image img {
@@ -306,6 +312,11 @@
             border-radius: 3px;
         }
         
+        .news-card-image .category.spiegel { background: #c00000; }
+        .news-card-image .category.heise { background: #0066cc; }
+        .news-card-image .category.nyt { background: #000000; }
+        .news-card-image .category.ai { background: #9333ea; }
+        
         .news-card-content {
             padding: 20px;
         }
@@ -329,9 +340,13 @@
         }
         
         .news-card-source {
-            color: var(--spiegel-red);
             font-weight: 500;
         }
+        
+        .news-card-source.spiegel { color: #c00000; }
+        .news-card-source.heise { color: #0066cc; }
+        .news-card-source.nyt { color: #000000; }
+        .news-card-source.wsj { color: #0080C0; }
         
         /* Stock Ticker */
         .stock-ticker {
@@ -466,9 +481,10 @@
         <nav>
             <ul>
                 <li class="active"><a href="#">Alle</a></li>
-                <li><a href="#ai">Künstliche Intelligenz</a></li>
+                <li><a href="#deutschland">Deutschland</a></li>
+                <li><a href="#international">International</a></li>
+                <li><a href="#ai">Tech & KI</a></li>
                 <li><a href="#stocks">Aktien</a></li>
-                <li><a href="#twitter">Twitter</a></li>
             </ul>
         </nav>
     </header>
@@ -476,109 +492,174 @@
     <main class="container">
         <!-- Hero Section -->
         <section class="hero">
-            <a href="https://taalas.com/the-path-to-ubiquitous-ai/" target="_blank" class="hero-main">
+            <a href="https://www.spiegel.de/wissenschaft/weltall/nasa-neun-monate-gestrandet-im-all-us-raumfahrtbehoerde-rechnet-mit-alter-fuehrung-ab-a-436b9662-8c94-48b7-9287-36b4bf4cc28f" target="_blank" class="hero-main">
+                <img src="https://images.unsplash.com/photo-1517976487492-5750f3195933?w=800&q=80" alt="NASA ISS">
                 <div class="hero-content">
-                    <span class="hero-tag">Top Story</span>
-                    <h1 class="hero-title">The path to ubiquitous AI: 17.000 Tokens pro Sekunde</h1>
-                    <div class="hero-meta">Taalas • 3 Stunden ago</div>
+                    <span class="hero-tag spiegel">SPIEGEL</span>
+                    <h1 class="hero-title">Neun Monate gestrandet im All – NASA rechnet mit alter Führung ab</h1>
+                    <div class="hero-meta">DER SPIEGEL • Vor 30 Minuten</div>
                 </div>
             </a>
             <div class="hero-sidebar">
-                <a href="https://www.ft.com/content/dea24046-0a73-40b2-8246-5ac7b7a54323" target="_blank" class="hero-sidebar-item">
-                    <span class="source">Financial Times</span>
-                    <h4>Nvidia & OpenAI: $100B Deal gestoppt, $30B stattdessen</h4>
+                <a href="https://www.spiegel.de/wirtschaft/unternehmen/amazon-ist-jetzt-das-umsatzstaerkste-unternehmen-der-welt-a-e18915c0-ebea-43e9-ad26-541e03af28a8" target="_blank" class="hero-sidebar-item">
+                    <span class="source spiegel">SPIEGEL Wirtschaft</span>
+                    <h4>Amazon überholt Walmart und wird umsatzstärkstes Unternehmen der Welt</h4>
                 </a>
-                <a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-1-pro/" target="_blank" class="hero-sidebar-item">
-                    <span class="source">Google</span>
-                    <h4>Google präsentiert Gemini 3.1 Pro</h4>
+                <a href="https://www.heise.de/news/Accenture-Aufstieg-in-hoechste-Ebenen-nur-mit-KI-Nutzung-11184464.html" target="_blank" class="hero-sidebar-item">
+                    <span class="source heise">Heise Online</span>
+                    <h4>Accenture: Aufstieg nur mit KI-Nutzung</h4>
                 </a>
-                <a href="https://www.together.ai/blog/consistency-diffusion-language-models" target="_blank" class="hero-sidebar-item">
-                    <span class="source">Together AI</span>
-                    <h4>Neue Diffusion-Modelle: Bis zu 14x schneller</h4>
+                <a href="https://www.nytimes.com/2026/02/20/business/ai-productivity-fed-rate-cuts-warsh.html" target="_blank" class="hero-sidebar-item">
+                    <span class="source nyt">NY Times</span>
+                    <h4>Can A.I. Productivity Boom Clear Path for Rate Cuts?</h4>
                 </a>
             </div>
         </section>
         
-        <!-- AI News Section -->
-        <section class="section" id="ai">
+        <!-- German News Section -->
+        <section class="section" id="deutschland">
             <div class="section-header">
-                <h2 class="section-title">🤖 <span>Künstliche Intelligenz</span></h2>
+                <h2 class="section-title">🇩🇪 <span>Deutschland</span></h2>
             </div>
             <div class="news-grid">
-                <a href="https://stripe.dev/blog/minions-stripes-one-shot-end-to-end-coding-agents-part-2" target="_blank" class="news-card">
+                <a href="https://www.spiegel.de/panorama/bildung/sachsen-anhalt-erlass-verbietet-parteienwerbung-in-schulen-a-8109fc91-f621-4480-9622-5ef242785daa" target="_blank" class="news-card">
                     <div class="news-card-image">
-                        <span class="category">Coding</span>
+                        <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=400&q=80" alt="Schule">
+                        <span class="category spiegel">SPIEGEL</span>
                     </div>
                     <div class="news-card-content">
-                        <h3 class="news-card-title">Stripe's Minions: Coding Agents Part 2</h3>
+                        <h3 class="news-card-title">Sachsen-Anhalt verbietet Parteienwerbung an Schulen</h3>
                         <div class="news-card-meta">
-                            <span class="news-card-source">Stripe</span>
-                            <span>2 Stunden ago</span>
+                            <span class="news-card-source spiegel">DER SPIEGEL</span>
+                            <span>Vor 5 Min</span>
                         </div>
                     </div>
                 </a>
                 
-                <a href="https://www.kasava.dev/blog/ai-as-exoskeleton" target="_blank" class="news-card">
+                <a href="https://www.spiegel.de/wirtschaft/unternehmen/rosneft-deutschland-eu-erlaubt-bund-uebernahme-von-kontrolle-a-c7bbb743-8530-43bb-80f7-584e4225bcc1" target="_blank" class="news-card">
                     <div class="news-card-image">
-                        <span class="category">Opinion</span>
+                        <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=400&q=80" alt="Wirtschaft">
+                        <span class="category spiegel">SPIEGEL</span>
                     </div>
                     <div class="news-card-content">
-                        <h3 class="news-card-title">AI is not a coworker, it's an exoskeleton</h3>
+                        <h3 class="news-card-title">EU erlaubt Bund Übernahme der Kontrolle bei Rosneft Deutschland</h3>
                         <div class="news-card-meta">
-                            <span class="news-card-source">Kasava</span>
-                            <span>18 Stunden ago</span>
+                            <span class="news-card-source spiegel">DER SPIEGEL</span>
+                            <span>Vor 15 Min</span>
                         </div>
                     </div>
                 </a>
                 
-                <a href="https://github.com/ggml-org/llama.cpp/discussions/19759" target="_blank" class="news-card">
+                <a href="https://www.spiegel.de/kultur/tv/rundfunkbeitrag-kef-empfiehlt-rundfunkbeitrag-von-18-64-euro-ab-2027-a-16a31d1f-8e67-4a8f-955d-d6368ed13410" target="_blank" class="news-card">
                     <div class="news-card-image">
-                        <span class="category">Open Source</span>
+                        <img src="https://images.unsplash.com/photo-1524685897742-1514b0b913e1?w=400&q=80" alt="Rundfunk">
+                        <span class="category spiegel">SPIEGEL</span>
                     </div>
                     <div class="news-card-content">
-                        <h3 class="news-card-title">Ggml.ai joins Hugging Face für Local AI</h3>
+                        <h3 class="news-card-title">Kommission empfiehlt höheren Rundfunkbeitrag ab 2027</h3>
                         <div class="news-card-meta">
-                            <span class="news-card-source">GitHub</span>
-                            <span>24 Minuten ago</span>
+                            <span class="news-card-source spiegel">DER SPIEGEL</span>
+                            <span>Vor 30 Min</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </section>
+        
+        <!-- International News Section -->
+        <section class="section" id="international">
+            <div class="section-header">
+                <h2 class="section-title">🌍 <span>International</span></h2>
+            </div>
+            <div class="news-grid">
+                <a href="https://www.nytimes.com/2026/02/20/world/europe/prince-andrew-arrest-epstein-royal-family-uk.html" target="_blank" class="news-card">
+                    <div class="news-card-image">
+                        <img src="https://images.unsplash.com/photo-1540923700953-df73e97e8be5?w=400&q=80" alt="Royal Family">
+                        <span class="category nyt">NY TIMES</span>
+                    </div>
+                    <div class="news-card-content">
+                        <h3 class="news-card-title">Former Prince Andrew's Arrest Upends Royal Effort to Move Past Scandal</h3>
+                        <div class="news-card-meta">
+                            <span class="news-card-source nyt">New York Times</span>
+                            <span>Vor 1 Std</span>
                         </div>
                     </div>
                 </a>
                 
-                <a href="https://jimmyhmiller.com/learn-codebase-visualizer" target="_blank" class="news-card">
+                <a href="https://www.nytimes.com/2026/02/20/world/americas/cuba-oil-blockade-trump.html" target="_blank" class="news-card">
                     <div class="news-card-image">
-                        <span class="category">Tutorial</span>
+                        <img src="https://images.unsplash.com/photo-1518676590629-3dcbd9c5a5c9?w=400&q=80" alt="Cuba">
+                        <span class="category nyt">NY TIMES</span>
                     </div>
                     <div class="news-card-content">
-                        <h3 class="news-card-title">Untapped Way to Learn a Codebase: Build a Visualizer</h3>
+                        <h3 class="news-card-title">Cuba Nears Collapse as New U.S. Blockade Strangles the Country</h3>
                         <div class="news-card-meta">
-                            <span class="news-card-source">Jimmy Miller</span>
-                            <span>5 Stunden ago</span>
+                            <span class="news-card-source nyt">New York Times</span>
+                            <span>Vor 2 Std</span>
                         </div>
                     </div>
                 </a>
                 
-                <a href="https://www.coinerella.com/made-in-eu-it-was-harder-than-i-thought/" target="_blank" class="news-card">
+                <a href="https://www.spiegel.de/ausland/japan-premierministerin-sanae-takaichi-warnt-vor-china-und-kuendigt-neue-sicherheitsstrategie-an-a-700c5103-f17e-4717-bdd0-aa39dd86f6e2" target="_blank" class="news-card">
                     <div class="news-card-image">
-                        <span class="category">Startup</span>
+                        <img src="https://images.unsplash.com/photo-1542051841857-5f90071e7989?w=400&q=80" alt="Japan">
+                        <span class="category spiegel">SPIEGEL</span>
                     </div>
                     <div class="news-card-content">
-                        <h3 class="news-card-title">I tried building my startup entirely on European infrastructure</h3>
+                        <h3 class="news-card-title">Japans Premierministerin warnt vor China und kündigt neue Sicherheitsstrategie an</h3>
                         <div class="news-card-meta">
-                            <span class="news-card-source">Coinerella</span>
-                            <span>5 Stunden ago</span>
+                            <span class="news-card-source spiegel">DER SPIEGEL</span>
+                            <span>Vor 25 Min</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </section>
+        
+        <!-- AI & Tech Section -->
+        <section class="section" id="ai">
+            <div class="section-header">
+                <h2 class="section-title">🤖 <span>Tech & Künstliche Intelligenz</span></h2>
+            </div>
+            <div class="news-grid">
+                <a href="https://www.heise.de/hintergrund/Mehr-Effizienz-weniger-Menschen-KI-im-Fahrzeugbau-11166322.html" target="_blank" class="news-card">
+                    <div class="news-card-image">
+                        <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=400&q=80" alt="KI Auto">
+                        <span class="category heise">Heise</span>
+                    </div>
+                    <div class="news-card-content">
+                        <h3 class="news-card-title">Mehr Effizienz, weniger Menschen: KI im Fahrzeugbau</h3>
+                        <div class="news-card-meta">
+                            <span class="news-card-source heise">Heise Online</span>
+                            <span>Heute</span>
                         </div>
                     </div>
                 </a>
                 
-                <a href="https://cep.dev/posts/every-infrastructure-decision-i-endorse-or-regret-after-4-years-running-infrastructure-at-a-startup/" target="_blank" class="news-card">
+                <a href="https://www.heise.de/news/AI-Slop-verstopft-Open-Source-GitHub-kuendigt-Massnahmen-an-11184036.html" target="_blank" class="news-card">
                     <div class="news-card-image">
-                        <span class="category">Infrastructure</span>
+                        <img src="https://images.unsplash.com/photo-1556075798-4825dfaaf498?w=400&q=80" alt="GitHub">
+                        <span class="category heise">Heise</span>
                     </div>
                     <div class="news-card-content">
-                        <h3 class="news-card-title">Infrastructure decisions I endorse or regret after 4 years</h3>
+                        <h3 class="news-card-title">AI Slop verstopft Open Source: GitHub kündigt Maßnahmen an</h3>
                         <div class="news-card-meta">
-                            <span class="news-card-source">Cep.dev</span>
-                            <span>15 Stunden ago</span>
+                            <span class="news-card-source heise">Heise Online</span>
+                            <span>Heute</span>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="https://www.nytimes.com/2026/02/20/business/ai-productivity-fed-rate-cuts-warsh.html" target="_blank" class="news-card">
+                    <div class="news-card-image">
+                        <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=400&q=80" alt="AI">
+                        <span class="category ai">AI</span>
+                    </div>
+                    <div class="news-card-content">
+                        <h3 class="news-card-title">Can an A.I. Productivity Boom Clear a Path for More Rate Cuts?</h3>
+                        <div class="news-card-meta">
+                            <span class="news-card-source nyt">New York Times</span>
+                            <span>Vor 3 Std</span>
                         </div>
                     </div>
                 </a>
@@ -634,22 +715,26 @@
             </div>
         </section>
         
-        <!-- Twitter Section -->
+        <!-- X/Twitter Section -->
         <section class="section" id="twitter">
             <div class="section-header">
-                <h2 class="section-title">🐦 <span>@pere_very_wild</span></h2>
+                <h2 class="section-title">🐦 <span>X / Twitter</span></h2>
             </div>
             <div class="news-grid">
                 <div class="news-card">
                     <div class="news-card-image">
-                        <span class="category">Twitter</span>
+                        <img src="https://images.unsplash.com/photo-1611605698335-8b1569810432?w=400&q=80" alt="X">
+                        <span class="category" style="background: #000;">X</span>
                     </div>
                     <div class="news-card-content">
-                        <h3 class="news-card-title">Twitter Feed wird geladen...</h3>
+                        <h3 class="news-card-title">🔒 X/Twitter Feed erfordert Anmeldung</h3>
                         <div class="news-card-meta">
-                            <span class="news-card-source">@pere_very_wild</span>
+                            <span class="news-card-source" style="color: #000;">Hinweis</span>
                             <span>-</span>
                         </div>
+                        <p style="margin-top: 10px; font-size: 13px; color: #666;">
+                            Um deinen X-Feed anzuzeigen, verbinde bitte den Browser mit der OpenClaw-Erweiterung oder teile einen X API-Zugang.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -658,7 +743,7 @@
     
     <footer>
         <p>📊 <strong>AI & Stock News Ticker</strong></p>
-        <p>Täglich automatisch aktualisiert | <a href="https://chrisperemex.github.io/ai-stock-ticker/" target="_blank">GitHub Pages</a></p>
+        <p>Quellen: SPIEGEL, Heise Online, New York Times | <a href="https://chrisperemex.github.io/ai-stock-ticker/" target="_blank">GitHub Pages</a></p>
     </footer>
 </body>
 </html>
